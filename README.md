@@ -56,8 +56,10 @@ An array of one-time events (PQs, Sectors, Regionals, Galactic). Each entry:
 
 ## Contributing
 
-1. Fork this repo
-2. Edit the JSON file(s) in `data/`
-3. Open a pull request
+1. Clone the repo
+2. Create a new branch (`git checkout -b my-update`)
+3. Edit the JSON file(s) in `data/`
+4. Commit and push your branch
+5. Open a pull request
 
 The `main` branch is protected — changes require a PR.
