@@ -1,0 +1,122 @@
+[
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Millennium Games",
+    "loc": "Rochester, NY",
+    "date": "2026-04-04",
+    "fmt": "eternal"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Top Deck Games",
+    "loc": "Cherry Hill, NJ",
+    "date": "2026-04-04",
+    "fmt": "premier"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "The Portal",
+    "loc": "Manchester, CT",
+    "date": "2026-04-11",
+    "fmt": "premier"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Hex & Co — Union Square",
+    "loc": "NYC, New York",
+    "date": "2026-04-12",
+    "fmt": "eternal"
+  },
+  {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "Star City Games",
+    "loc": "Atlanta, GA",
+    "date": "2026-04-18",
+    "fmt": "premier"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Adventurer's Guild",
+    "loc": "Mechanicsburg, PA",
+    "date": "2026-04-25",
+    "fmt": "limited"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "The Clever Kobold",
+    "loc": "Groton, CT",
+    "date": "2026-04-25",
+    "fmt": "premier"
+  },
+  {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "Star City Games",
+    "loc": "Palm Springs, CA",
+    "date": "2026-05-02",
+    "fmt": "limited"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "The Bearded Dragon",
+    "loc": "Bernardsville, NJ",
+    "date": "2026-05-09",
+    "fmt": "premier"
+  },
+  {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "Organized Play",
+    "loc": "London, UK",
+    "date": "2026-05-09",
+    "fmt": "premier"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Red Seal Gaming",
+    "loc": "Matawan, NJ",
+    "date": "2026-05-16",
+    "fmt": "premier"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Zombie Planet / Fortress",
+    "loc": "Albany, NY",
+    "date": "2026-05-16",
+    "fmt": "premier"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "The Portal Comics and Gaming",
+    "loc": "Bethlehem, PA",
+    "date": "2026-05-23",
+    "fmt": "premier"
+  },
+  {
+    "tier": "regional",
+    "label": "Regional",
+    "name": "Fanfinity",
+    "loc": "Prague, Czech Rep.",
+    "date": "2026-05-22",
+    "fmt": ""
+  },
+  {
+    "tier": "galactic",
+    "label": "Galactic",
+    "name": "Galactic Championship",
+    "loc": "Las Vegas, NV",
+    "date": "2026-07-24",
+    "fmt": ""
+  }
+]
