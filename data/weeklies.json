@@ -1,44 +1,94 @@
 [
   {
     "store": "Hex & Co — Union Square",
-    "days": [3, 5],
+    "days": [
+      5
+    ],
     "time": "7:00 PM",
     "fee": "$15 Constructed",
     "maps": "https://maps.google.com/?q=801+Broadway+New+York+NY+10003"
   },
   {
-    "store": "Nxt Legaci Gaming",
-    "days": [2, 4],
+    "store": "The Compleat Strategist",
+    "days": [
+      1
+    ],
     "time": "6:30 PM",
-    "fee": "$15",
-    "maps": "https://maps.google.com/?q=200+W+41st+Street+New+York+NY+10036"
+    "fee": "Check with store",
+    "maps": "https://maps.google.com/?q=11+E+33rd+St+New+York+NY+10016"
   },
   {
     "store": "Neutral Ground Gaming",
-    "days": [0],
+    "days": [
+      0
+    ],
     "time": "2:00 PM",
     "fee": "Free",
     "maps": "https://maps.google.com/?q=37-40+31st+St+Long+Island+City+NY+11101"
   },
   {
     "store": "Brooklyn Game Knight",
-    "days": [6],
+    "days": [
+      6
+    ],
     "time": "6:00 PM",
     "fee": "Rotating",
-    "maps": "https://maps.google.com/?q=68+34th+St+Brooklyn+NY+11232"
+    "maps": "https://maps.google.com/?q=68+34th+St+Brooklyn+NY+11232",
+    "overrides": [
+      {
+        "date": "2026-10-03",
+        "time": "6:30 PM",
+        "fee": "$35 + tax",
+        "note": "Homeworlds Prerelease · 2 Weekly OP Packs, 1 Booster per round won, 1 Booster for participation"
+      },
+      {
+        "date": "2026-10-10",
+        "cancelled": true
+      },
+      {
+        "date": "2026-10-17",
+        "time": "10:00 AM",
+        "fee": "$35 + tax",
+        "note": "Limited (6 Pack Sealed), 10 AM–2 PM · 2 Weekly OP Packs, 1 Booster per round won"
+      },
+      {
+        "date": "2026-10-24",
+        "cancelled": true
+      },
+      {
+        "date": "2026-10-31",
+        "time": "10:00 AM",
+        "fee": "$19 + tax",
+        "note": "Premier, 10 AM–2 PM · 2 Weekly OP Packs, 1 Booster per round won"
+      }
+    ]
   },
   {
     "store": "Bushwick Gaming Club",
-    "days": [4],
+    "days": [
+      4
+    ],
     "time": "7:00 PM",
     "fee": "1 Pack",
     "maps": "https://maps.google.com/?q=545+Johnson+Ave+Brooklyn+NY+11237"
   },
   {
-    "store": "Cooks Crafts",
-    "days": [1],
+    "store": "Victory Point (Jersey City)",
+    "days": [
+      1
+    ],
     "time": "7:00 PM",
-    "fee": "Rotating",
-    "maps": "https://maps.google.com/?q=68-01+Cooper+Ave+Ridgewood+NY+11385"
+    "fee": "Check their Discord",
+    "maps": "https://maps.google.com/?q=112+Brunswick+St+Jersey+City+NJ+07302",
+    "every": 2
+  },
+  {
+    "store": "A Store of Fire & Dice (Lynbrook)",
+    "days": [
+      2
+    ],
+    "time": "7:00 PM",
+    "fee": "Check with store",
+    "maps": "https://maps.google.com/?q=486+Merrick+Rd+Lynbrook+NY+11563"
   }
 ]
