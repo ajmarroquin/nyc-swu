@@ -1,15 +1,5 @@
 [
   {
-    "tier": "sector",
-    "label": "Sector",
-    "name": "ASH Europe Sector",
-    "loc": "Italy",
-    "date": "2026-09-19",
-    "fmt": "limited",
-    "link": "https://www.swuqualifiers.com/",
-    "note": "Limited / Premier"
-  },
-  {
     "tier": "showdown",
     "label": "Showdown",
     "name": "Hex & Co — Union Square",
@@ -24,9 +14,9 @@
     "label": "Pre-Release",
     "name": "Brooklyn Game Knight",
     "loc": "Brooklyn, NY",
-    "date": "2026-10-04",
+    "date": "2026-10-03",
     "fmt": "limited",
-    "note": "6:30 PM · $35"
+    "note": "6:30–10:00 PM · $35 + tax"
   },
   {
     "tier": "prerelease",

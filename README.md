@@ -29,6 +29,11 @@ An array of weekly events. Each entry:
 | `time`  | string     | Start time (e.g. `"7:00 PM"`) |
 | `fee`   | string     | Entry fee or format info (e.g. `"$15"`, `"Free"`, `"Rotating"`) |
 | `maps`  | string     | Google Maps link to the venue |
+| `every` | number     | *Optional.* Repeat every N weeks (e.g. `2` for bi-weekly). Defaults to every week |
+| `start` | string     | *Optional, with `every`.* Any known "on" date, `YYYY-MM-DD`. Without it the site flags the event as "confirm on Discord" |
+| `overrides` | object[] | *Optional.* One-off changes for a specific date: `{ "date": "YYYY-MM-DD", "time", "fee", "note" }`, or `{ "date": "...", "cancelled": true }` for a skipped week |
+
+Overrides replace the regular time/fee on that date in "Happening Today". A store card with `<div class="store-overrides" data-store="Store Name">` in `index.html` also lists its upcoming overrides.
 
 ### `data/events.json` — Major Tournaments & Events
 

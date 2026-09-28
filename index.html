@@ -162,6 +162,18 @@
   .prow:last-child { border:none; }
   .prec { color:var(--muted); }
   .prew { color:var(--gold); font-weight:600; }
+  .store-overrides { grid-column:1/-1; }
+  .store-overrides:empty { display:none; }
+  .ov-row { display:flex; gap:12px; font-size:.84rem; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); }
+  .ov-row:last-child { border:none; }
+  .ov-date { font-weight:700; color:#fff; white-space:nowrap; min-width:78px; }
+  .ov-body { color:var(--text); }
+  .ov-body .ov-meta { color:var(--gold); font-weight:600; }
+  .ov-off .ov-date, .ov-off .ov-body { color:var(--muted); text-decoration:line-through; }
+  .today-card.off { background:var(--card-bg); border-color:var(--card-border); }
+  .today-card.off::before { display:none; }
+  .today-card.off .today-card-time { color:var(--muted); }
+  .today-card-note { font-size:.78rem; color:var(--text); margin-top:3px; }
   .store-note { font-size:.78rem; color:#5a7a8a; font-style:italic; line-height:1.4; grid-column:1/-1; margin-top:8px; }
 
   /* ALL EVENTS TABLE */
@@ -286,7 +298,12 @@
         </div>
         <div>
           <div class="detail-label">Prizing</div>
-          <div class="detail-val">Same as Hex &amp; Co</div>
+          <div class="prizing-mini">
+            <div class="prow"><span class="prec">3–0</span><span class="prew">6 Packs</span></div>
+            <div class="prow"><span class="prec">2–1</span><span class="prew">3 Packs</span></div>
+            <div class="prow"><span class="prec">1–2</span><span class="prew">2 Packs</span></div>
+            <div class="prow"><span class="prec">0–3</span><span class="prew">1 Pack</span></div>
+          </div>
         </div>
       </div>
     </details>
@@ -330,7 +347,7 @@
     <details class="store-row has-weekly red-accent">
       <summary class="store-summary">
         <span class="store-name">Brooklyn Game Knight</span>
-        <div class="store-tags"><span class="day-tag tag-red">SAT 6–10PM</span></div>
+        <div class="store-tags"><span class="day-tag tag-red">SAT</span></div>
         <span class="chevron">▾</span>
       </summary>
       <div class="store-detail">
@@ -338,10 +355,11 @@
           <div class="detail-label">Address</div>
           <div class="detail-val"><a href="https://maps.google.com/?q=68+34th+St+Brooklyn+NY+11232" target="_blank">68 34th St, Bldg 6 – 2nd Fl, Brooklyn ↗</a></div>
           <div class="detail-label">Schedule</div>
-          <div class="detail-val">Saturday @ 6:00–10:00 PM</div>
+          <div class="detail-val">Saturdays · times vary, see below</div>
           <div class="detail-label">Format</div>
           <div class="detail-val">Rotating</div>
         </div>
+        <div class="store-overrides" data-store="Brooklyn Game Knight"></div>
       </div>
     </details>
 
@@ -387,9 +405,9 @@
           <div class="detail-label">Address</div>
           <div class="detail-val"><a href="https://maps.google.com/?q=112+Brunswick+St+Jersey+City+NJ+07302" target="_blank">112 Brunswick St, Jersey City, NJ 07302 ↗</a></div>
           <div class="detail-label">Schedule</div>
-          <div class="detail-val">Mondays @ 7:00 PM (Bi-Weekly)</div>
+          <div class="detail-val">Every other Monday @ 7:00 PM</div>
         </div>
-        <p class="store-note">Check their Discord for which Mondays are on.</p>
+        <p class="store-note" data-biweekly="Victory Point (Jersey City)">Check their Discord for which Mondays are on.</p>
       </div>
     </details>
 
@@ -476,6 +494,18 @@
     render(weeklies, allEvents);
   }
 
+  function toISO(d) {
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  }
+
+  // For weeklies with "every" > 1: "on"/"off" when "start" (a known on-date) is set, else "unknown".
+  function biweeklyStatus(w, date) {
+    if (!w.every || w.every < 2) return "on";
+    if (!w.start) return "unknown";
+    const weeks = Math.round((date - new Date(w.start + "T00:00:00")) / (7 * 864e5));
+    return ((weeks % w.every) + w.every) % w.every === 0 ? "on" : "off";
+  }
+
   function fmtDateRange(e) {
     const opts = {month:"short",day:"numeric",year:"numeric"};
     if (!e.end) return e.date.toLocaleDateString("en-US",opts);
@@ -486,20 +516,30 @@
   }
 
   function render(weeklies, allEvents) {
-    const TODAY_DAY = new Date().getDay();
+    const today = new Date(); today.setHours(0,0,0,0);
+    const TODAY_DAY = today.getDay();
+    const TODAY_ISO = toISO(today);
 
     // TODAY
     const todayEl = document.getElementById("today-container");
-    const todayGames = weeklies.filter(w => w.days.includes(TODAY_DAY));
+    const todayGames = weeklies
+      .filter(w => w.days.includes(TODAY_DAY) && biweeklyStatus(w, today) !== "off")
+      .map(w => ({ ...w, ...(w.overrides || []).find(o => o.date === TODAY_ISO) }));
     if (!todayGames.length) {
       todayEl.innerHTML = `<p class="no-today">No scheduled weeklies today — check the <a href="https://discord.gg/4eZbmKQr7j" target="_blank" style="color:var(--gold);">Discord</a> for pop-ups!</p>`;
     } else {
       todayGames.forEach(g => {
         const d = document.createElement("div");
-        d.className = "today-card";
-        d.innerHTML = `<div class="today-card-store">${g.store}</div>
+        d.className = g.cancelled ? "today-card off" : "today-card";
+        const unconfirmed = biweeklyStatus(g, today) === "unknown";
+        d.innerHTML = g.cancelled
+          ? `<div class="today-card-store">${g.store}</div>
+          <div class="today-card-time">🚫 No weekly play today</div>`
+          : `<div class="today-card-store">${g.store}</div>
           <div class="today-card-time">⏰ ${g.time}</div>
+          ${g.note ? `<div class="today-card-note">${g.note}</div>` : ""}
           <div class="today-card-meta">Entry: ${g.fee}</div>
+          ${unconfirmed ? `<div class="today-card-meta">⚠️ Bi-weekly — confirm today is on</div>` : ""}
           <a class="today-card-map" href="${g.maps}" target="_blank">📍 View on Maps ↗</a>`;
         todayEl.appendChild(d);
       });
@@ -527,6 +567,30 @@
         upcomingEl.appendChild(d);
       });
     }
+
+    // STORE SCHEDULE CHANGES (from weeklies[].overrides)
+    document.querySelectorAll(".store-overrides[data-store]").forEach(el => {
+      const w = weeklies.find(x => x.store === el.dataset.store);
+      const upcoming = (w?.overrides || []).filter(o => o.date >= TODAY_ISO).sort((a,b) => a.date.localeCompare(b.date));
+      if (!upcoming.length) return;
+      el.innerHTML = `<div class="detail-label">Upcoming Schedule</div>` + upcoming.map(o => {
+        const ds = new Date(o.date + "T00:00:00").toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"});
+        return o.cancelled
+          ? `<div class="ov-row ov-off"><span class="ov-date">${ds}</span><span class="ov-body">No weekly play</span></div>`
+          : `<div class="ov-row"><span class="ov-date">${ds}</span><span class="ov-body"><span class="ov-meta">${o.time || w.time} · ${o.fee || w.fee}</span>${o.note ? `<br>${o.note}` : ""}</span></div>`;
+      }).join("");
+    });
+
+    // BI-WEEKLY NOTES (next on-dates when an anchor "start" is set)
+    document.querySelectorAll("[data-biweekly]").forEach(el => {
+      const w = weeklies.find(x => x.store === el.dataset.biweekly);
+      if (!w || !w.start) return;
+      const next = [];
+      for (let d = new Date(today); next.length < 3; d.setDate(d.getDate() + 1)) {
+        if (w.days.includes(d.getDay()) && biweeklyStatus(w, d) === "on") next.push(d.toLocaleDateString("en-US",{month:"short",day:"numeric"}));
+      }
+      el.textContent = `Next dates: ${next.join(", ")}.`;
+    });
 
     // ALL EVENTS TABLE
     const tbody = document.getElementById("all-events-body");
