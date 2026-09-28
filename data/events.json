@@ -1,82 +1,143 @@
 [
   {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "ASH Europe Sector",
+    "loc": "Italy",
+    "date": "2026-09-19",
+    "fmt": "limited",
+    "link": "https://www.swuqualifiers.com/",
+    "note": "Limited / Premier"
+  },
+  {
+    "tier": "showdown",
+    "label": "Showdown",
+    "name": "Hex & Co — Union Square",
+    "loc": "NYC, New York",
+    "date": "2026-09-30",
+    "fmt": "",
+    "link": "https://melee.gg/Tournament/View/469110",
+    "note": "7:00 PM · $15"
+  },
+  {
+    "tier": "prerelease",
+    "label": "Pre-Release",
+    "name": "Brooklyn Game Knight",
+    "loc": "Brooklyn, NY",
+    "date": "2026-10-04",
+    "fmt": "limited",
+    "note": "6:30 PM · $35"
+  },
+  {
+    "tier": "prerelease",
+    "label": "Pre-Release",
+    "name": "Neutral Ground Gaming — Sealed Box",
+    "loc": "Long Island City, NY",
+    "date": "2026-10-04",
+    "fmt": "limited",
+    "link": "https://www.neutralgroundgaming.com/event-details/homeworlds-sealed-box-pre-release",
+    "note": "10:00 AM (doors 9 AM) · $170 pre-registration"
+  },
+  {
+    "tier": "regional",
+    "label": "Regional",
+    "name": "Fanfinity",
+    "loc": "Utrecht, Netherlands",
+    "date": "2026-10-30",
+    "fmt": "",
+    "end": "2026-11-01",
+    "note": "Jaarbeurs Utrecht · Tickets TBA"
+  },
+  {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "HMW USA Sector",
+    "loc": "Baltimore, MD",
+    "date": "2026-11-07",
+    "fmt": "premier",
+    "end": "2026-11-08",
+    "link": "https://www.swuqualifiers.com/",
+    "note": "Baltimore Convention Center · Premier / Limited"
+  },
+  {
     "tier": "planetary",
     "label": "Planetary",
-    "name": "Millennium Games",
+    "name": "Hex & Co — West",
+    "loc": "NYC, New York",
+    "date": "2026-11-21",
+    "fmt": "limited",
+    "link": "https://www.hexnyc.com/swu/"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Rochester CCG",
     "loc": "Rochester, NY",
-    "date": "2026-04-04",
-    "fmt": "eternal"
+    "date": "2026-12-05",
+    "fmt": "premier"
+  },
+  {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "HMW Rest of World Sector",
+    "loc": "Melbourne, Australia",
+    "date": "2026-12-05",
+    "fmt": "premier",
+    "end": "2026-12-06",
+    "note": "Melbourne Royal Center · Premier / Limited · Tickets TBA"
+  },
+  {
+    "tier": "planetary",
+    "label": "Planetary",
+    "name": "Silver Sun Games",
+    "loc": "Montgomery, NY",
+    "date": "2026-12-06",
+    "fmt": "limited"
   },
   {
     "tier": "planetary",
     "label": "Planetary",
     "name": "Top Deck Games",
     "loc": "Cherry Hill, NJ",
-    "date": "2026-04-04",
-    "fmt": "premier"
-  },
-  {
-    "tier": "planetary",
-    "label": "Planetary",
-    "name": "The Portal",
-    "loc": "Manchester, CT",
-    "date": "2026-04-11",
-    "fmt": "premier"
-  },
-  {
-    "tier": "planetary",
-    "label": "Planetary",
-    "name": "Hex & Co — Union Square",
-    "loc": "NYC, New York",
-    "date": "2026-04-12",
+    "date": "2026-12-12",
     "fmt": "eternal"
   },
   {
-    "tier": "sector",
-    "label": "Sector",
-    "name": "Star City Games",
-    "loc": "Atlanta, GA",
-    "date": "2026-04-18",
-    "fmt": "premier"
-  },
-  {
     "tier": "planetary",
     "label": "Planetary",
-    "name": "Adventurer's Guild",
-    "loc": "Mechanicsburg, PA",
-    "date": "2026-04-25",
-    "fmt": "limited"
-  },
-  {
-    "tier": "planetary",
-    "label": "Planetary",
-    "name": "The Clever Kobold",
-    "loc": "Groton, CT",
-    "date": "2026-04-25",
+    "name": "Tabletop Gaming Center",
+    "loc": "Newington, CT",
+    "date": "2026-12-19",
     "fmt": "premier"
   },
   {
     "tier": "sector",
     "label": "Sector",
-    "name": "Star City Games",
-    "loc": "Palm Springs, CA",
-    "date": "2026-05-02",
-    "fmt": "limited"
+    "name": "HMW USA Sector",
+    "loc": "Minneapolis, MN",
+    "date": "2027-01-09",
+    "fmt": "limited",
+    "end": "2027-01-10",
+    "link": "https://www.swuqualifiers.com/",
+    "note": "Minneapolis Convention Center · Limited / Premier"
+  },
+  {
+    "tier": "sector",
+    "label": "Sector",
+    "name": "HMW Europe Sector",
+    "loc": "Wrocław, Poland",
+    "date": "2027-01-23",
+    "fmt": "premier",
+    "end": "2027-01-24",
+    "link": "https://tickets.organizedplay.events/",
+    "note": "Gem Hotel Wrocław · Premier / Limited"
   },
   {
     "tier": "planetary",
     "label": "Planetary",
     "name": "The Bearded Dragon",
     "loc": "Bernardsville, NJ",
-    "date": "2026-05-09",
-    "fmt": "premier"
-  },
-  {
-    "tier": "sector",
-    "label": "Sector",
-    "name": "Organized Play",
-    "loc": "London, UK",
-    "date": "2026-05-09",
+    "date": "2027-01-24",
     "fmt": "premier"
   },
   {
@@ -84,39 +145,18 @@
     "label": "Planetary",
     "name": "Red Seal Gaming",
     "loc": "Matawan, NJ",
-    "date": "2026-05-16",
+    "date": "2027-01-30",
     "fmt": "premier"
-  },
-  {
-    "tier": "planetary",
-    "label": "Planetary",
-    "name": "Zombie Planet / Fortress",
-    "loc": "Albany, NY",
-    "date": "2026-05-16",
-    "fmt": "premier"
-  },
-  {
-    "tier": "planetary",
-    "label": "Planetary",
-    "name": "The Portal Comics and Gaming",
-    "loc": "Bethlehem, PA",
-    "date": "2026-05-23",
-    "fmt": "premier"
-  },
-  {
-    "tier": "regional",
-    "label": "Regional",
-    "name": "Fanfinity",
-    "loc": "Prague, Czech Rep.",
-    "date": "2026-05-22",
-    "fmt": ""
   },
   {
     "tier": "galactic",
     "label": "Galactic",
-    "name": "Galactic Championship",
-    "loc": "Las Vegas, NV",
-    "date": "2026-07-24",
-    "fmt": ""
+    "name": "Galactic Championship 2027",
+    "loc": "Anaheim, CA",
+    "date": "2027-05-21",
+    "fmt": "",
+    "end": "2027-05-23",
+    "link": "https://asmodee.swoogo.com/galacticchampionship2027/home",
+    "note": "Disneyland Hotel"
   }
 ]

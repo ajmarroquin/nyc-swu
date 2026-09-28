@@ -47,12 +47,15 @@ An array of one-time events (PQs, Sectors, Regionals, Galactic). Each entry:
 
 | Field   | Type   | Description |
 |---------|--------|-------------|
-| `tier`  | string | One of: `planetary`, `sector`, `regional`, `galactic` — controls the color/badge |
+| `tier`  | string | One of: `showdown`, `prerelease`, `planetary`, `sector`, `regional`, `galactic` — controls the color/badge |
 | `label` | string | Display label (e.g. `"Planetary"`, `"Sector"`) |
 | `name`  | string | Event or store name |
 | `loc`   | string | City/state location |
 | `date`  | string | Date in `YYYY-MM-DD` format |
 | `fmt`   | string | Format: `"premier"`, `"eternal"`, `"limited"`, or `""` if unknown |
+| `end`   | string | *Optional.* Last day of a multi-day event, `YYYY-MM-DD` |
+| `link`  | string | *Optional.* Ticket/registration URL |
+| `note`  | string | *Optional.* Short extra line (time, cost, venue) |
 
 ## Contributing
 
